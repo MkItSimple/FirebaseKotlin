@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.firebasekotlin.R
+import kotlinx.android.synthetic.main.fragment_authors.*
 
 /**
  * A simple [Fragment] subclass.
@@ -24,5 +25,12 @@ class AuthorsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_authors, container, false)
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
+        button_add.setOnClickListener {
+            AddAuthorDialogFragment()
+                .show(childFragmentManager, "")
+        }
+    }
 }
